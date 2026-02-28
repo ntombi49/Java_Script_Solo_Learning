@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      h1 {
+        color: #1a64d6;
+        font-size: 34px;
+        margin: 0;
+      }
+      h2 {
+        margin: 0;
+        font-size: 34px;
+        font-weight: 400;
+      }
+      ul {
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        text-align: center;
+        padding: 10px 0;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      p {
+        font-size: 18px;
+        opacity: 0.7;
+        text-align: center;
+        font-family: monospace;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        border: 1px solid #1a64d6;
+        background: #1a64d6;
+        color: #fff;
+        padding: 16px 24px;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="current-weather">
+      🌤
+      <br />
+      Currently 21° in Tokyo
+    </h1>
+
+    <h2>13° / <strong>23°</strong></h2>
+
+    <ul>
+      <li>
+        <h3>🌧️Tomorrow</h3>
+        <p>10° / <strong>22°</strong></p>
+      </li>
+      <li>
+        <h3>⛅ Saturday</h3>
+        <p>15° / <strong>17°</strong></p>
+      </li>
+      <li>
+        <h3>☀️ Sunday</h3>
+        <p>25° / <strong>28°</strong></p>
+      </li>
+    </ul>
+
+    <button onclick="updateWeather()">Change city</button>
+
+    <p>Coded by Ntombi</p>
+
+    <script>
+      function updateWeather() {
+        let city = prompt("What city do you live in?");
+
+        let temp = prompt("What temperature is it?");
+
+        let heading = document.querySelector("#current-weather");
+
+        if (temp < 0) {
+          heading.innerHTML = "☹️ <br /> Currently " + temp + "° in " + city;
+        } else {
+          heading.innerHTML = "😊 <br /> Currently " + temp + "° in " + city;
+        }
+      }
+    </script>
+  </body>
+</html>
